@@ -10,7 +10,7 @@
 
 #import "AppDelegate.h"
 #import "GameConfig.h"
-#import "HelloWorldLayer.h"
+#import "BaseLevelLayer.h"
 #import "RootViewController.h"
 
 @implementation AppDelegate
@@ -111,7 +111,17 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
+    CCScene* scene = [CCScene node];
+    BaseLevelLayer* layer = [BaseLevelLayer node];
+    [layer addObstacle:nil location:CGPointMake(250,100) angle:0];
+    [layer addObstacle:nil location:CGPointMake(350,200) angle:0.3f];
+    
+    [layer addEnemy:nil location:CGPointMake(350,250) angle:0];
+    [layer addEnemy:nil location:CGPointMake(230,150) angle:0];
+    
+    [scene addChild:layer];
+    
+	[[CCDirector sharedDirector] runWithScene: scene];
 }
 
 
