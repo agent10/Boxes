@@ -10,6 +10,7 @@
 
 #import "AppDelegate.h"
 #import "GameConfig.h"
+#import "BaseBackgroungLayer.h"
 #import "BaseLevelLayer.h"
 #import "RootViewController.h"
 
@@ -112,13 +113,17 @@
 	
 	// Run the intro Scene
     CCScene* scene = [CCScene node];
+    
+    BaseBackgroungLayer* backlayer = [BaseBackgroungLayer node];
+    [backlayer setBackground:nil];
+    
     BaseLevelLayer* layer = [BaseLevelLayer node];
     [layer addObstacle:nil location:CGPointMake(250,100) angle:0];
-    [layer addObstacle:nil location:CGPointMake(350,200) angle:0.3f];
-    
+    [layer addObstacle:nil location:CGPointMake(350,200) angle:0.1f];
     [layer addEnemy:nil location:CGPointMake(350,250) angle:0];
     [layer addEnemy:nil location:CGPointMake(230,150) angle:0];
     
+    [scene addChild:backlayer];
     [scene addChild:layer];
     
 	[[CCDirector sharedDirector] runWithScene: scene];

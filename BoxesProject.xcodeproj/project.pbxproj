@@ -160,6 +160,16 @@
 		ED4153641411918300749839 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED4153631411918300749839 /* GLES-Render.mm */; };
 		ED4153671411918300749839 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = ED4153661411918300749839 /* blocks.png */; };
 		ED4153731411999800749839 /* BaseLevelLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED4153721411999800749839 /* BaseLevelLayer.mm */; };
+		ED918C481413A494008FC17A /* backgroundtemp.png in Resources */ = {isa = PBXBuildFile; fileRef = ED918C471413A494008FC17A /* backgroundtemp.png */; };
+		ED918C4C1413A4B5008FC17A /* BaseBackgroungLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED918C4B1413A4B5008FC17A /* BaseBackgroungLayer.m */; };
+		ED918C4E1413B036008FC17A /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = ED918C4D1413B036008FC17A /* ball.png */; };
+		ED918C551413B788008FC17A /* blue1.png in Resources */ = {isa = PBXBuildFile; fileRef = ED918C511413B788008FC17A /* blue1.png */; };
+		ED918C561413B788008FC17A /* green1.png in Resources */ = {isa = PBXBuildFile; fileRef = ED918C521413B788008FC17A /* green1.png */; };
+		ED918C571413B788008FC17A /* green2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED918C531413B788008FC17A /* green2.png */; };
+		ED918C581413B788008FC17A /* green3.png in Resources */ = {isa = PBXBuildFile; fileRef = ED918C541413B788008FC17A /* green3.png */; };
+		ED918C5A1413B88D008FC17A /* cannon.png in Resources */ = {isa = PBXBuildFile; fileRef = ED918C591413B88D008FC17A /* cannon.png */; };
+		ED918C601413CF27008FC17A /* CannonZone.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED918C5F1413CF26008FC17A /* CannonZone.mm */; };
+		ED918C621413D161008FC17A /* cannonzone.png in Resources */ = {isa = PBXBuildFile; fileRef = ED918C611413D160008FC17A /* cannonzone.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -476,6 +486,19 @@
 		ED4153661411918300749839 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
 		ED4153711411999800749839 /* BaseLevelLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLevelLayer.h; sourceTree = "<group>"; };
 		ED4153721411999800749839 /* BaseLevelLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BaseLevelLayer.mm; sourceTree = "<group>"; };
+		ED918C471413A494008FC17A /* backgroundtemp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundtemp.png; path = Resources/backgroundtemp.png; sourceTree = "<group>"; };
+		ED918C4A1413A4B5008FC17A /* BaseBackgroungLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseBackgroungLayer.h; sourceTree = "<group>"; };
+		ED918C4B1413A4B5008FC17A /* BaseBackgroungLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseBackgroungLayer.m; sourceTree = "<group>"; };
+		ED918C4D1413B036008FC17A /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
+		ED918C511413B788008FC17A /* blue1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue1.png; sourceTree = "<group>"; };
+		ED918C521413B788008FC17A /* green1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green1.png; sourceTree = "<group>"; };
+		ED918C531413B788008FC17A /* green2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green2.png; sourceTree = "<group>"; };
+		ED918C541413B788008FC17A /* green3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green3.png; sourceTree = "<group>"; };
+		ED918C591413B88D008FC17A /* cannon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cannon.png; sourceTree = "<group>"; };
+		ED918C5E1413CF26008FC17A /* CannonZone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CannonZone.h; sourceTree = "<group>"; };
+		ED918C5F1413CF26008FC17A /* CannonZone.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CannonZone.mm; sourceTree = "<group>"; };
+		ED918C611413D160008FC17A /* cannonzone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cannonzone.png; sourceTree = "<group>"; };
+		ED918C671413E47A008FC17A /* CannonZoneCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CannonZoneCallback.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -536,6 +559,11 @@
 				ED41535A1411918300749839 /* AppDelegate.mm */,
 				ED4153711411999800749839 /* BaseLevelLayer.h */,
 				ED4153721411999800749839 /* BaseLevelLayer.mm */,
+				ED918C4A1413A4B5008FC17A /* BaseBackgroungLayer.h */,
+				ED918C4B1413A4B5008FC17A /* BaseBackgroungLayer.m */,
+				ED918C5E1413CF26008FC17A /* CannonZone.h */,
+				ED918C5F1413CF26008FC17A /* CannonZone.mm */,
+				ED918C671413E47A008FC17A /* CannonZoneCallback.h */,
 				ED41535C1411918300749839 /* RootViewController.h */,
 				ED41535D1411918300749839 /* RootViewController.m */,
 				ED41535F1411918300749839 /* HelloWorldLayer.h */,
@@ -553,6 +581,11 @@
 		ED4151951411918000749839 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ED918C611413D160008FC17A /* cannonzone.png */,
+				ED918C591413B88D008FC17A /* cannon.png */,
+				ED918C4F1413B756008FC17A /* Blocks */,
+				ED918C4D1413B036008FC17A /* ball.png */,
+				ED918C471413A494008FC17A /* backgroundtemp.png */,
 				ED4151961411918000749839 /* Default.png */,
 				ED4151981411918000749839 /* fps_images.png */,
 				ED41519A1411918000749839 /* Icon-72.png */,
@@ -1008,6 +1041,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		ED918C4F1413B756008FC17A /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				ED918C511413B788008FC17A /* blue1.png */,
+				ED918C521413B788008FC17A /* green1.png */,
+				ED918C531413B788008FC17A /* green2.png */,
+				ED918C541413B788008FC17A /* green3.png */,
+			);
+			name = Blocks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1068,6 +1112,14 @@
 				ED4151A51411918000749839 /* Icon@2x.png in Resources */,
 				ED4151A81411918000749839 /* iTunesArtwork in Resources */,
 				ED4153671411918300749839 /* blocks.png in Resources */,
+				ED918C481413A494008FC17A /* backgroundtemp.png in Resources */,
+				ED918C4E1413B036008FC17A /* ball.png in Resources */,
+				ED918C551413B788008FC17A /* blue1.png in Resources */,
+				ED918C561413B788008FC17A /* green1.png in Resources */,
+				ED918C571413B788008FC17A /* green2.png in Resources */,
+				ED918C581413B788008FC17A /* green3.png in Resources */,
+				ED918C5A1413B88D008FC17A /* cannon.png in Resources */,
+				ED918C621413D161008FC17A /* cannonzone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1213,6 +1265,8 @@
 				ED4153611411918300749839 /* HelloWorldLayer.mm in Sources */,
 				ED4153641411918300749839 /* GLES-Render.mm in Sources */,
 				ED4153731411999800749839 /* BaseLevelLayer.mm in Sources */,
+				ED918C4C1413A4B5008FC17A /* BaseBackgroungLayer.m in Sources */,
+				ED918C601413CF27008FC17A /* CannonZone.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
