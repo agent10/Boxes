@@ -72,10 +72,10 @@
 		CGPoint location = [touch locationInView: [touch view]];
 		
 		location = [[CCDirector sharedDirector] convertToGL: location];
-        float forcetemp = 20;
+        float forcetemp = 13; //TODO: Change
         float a = forcetemp * sin((90 + cannon.rotation)*3.14/180);
         float b = forcetemp * cos((90 + cannon.rotation)*3.14/180);
-        [delegate fire:[self convertToWorldSpace:fpoint] vec:ccp(a,b) force:0];
+        [delegate fire:[self convertToWorldSpace:fpoint] vec:ccp(a,b) force:150];
 	}
 }
 

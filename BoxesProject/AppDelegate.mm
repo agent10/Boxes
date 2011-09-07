@@ -13,6 +13,9 @@
 #import "BaseBackgroungLayer.h"
 #import "BaseLevelLayer.h"
 #import "RootViewController.h"
+#import "GoodBlock.h"
+#import "Obstacle.h"
+#import "DynamicObstacle.h"
 
 @implementation AppDelegate
 
@@ -115,13 +118,19 @@
     CCScene* scene = [CCScene node];
     
     BaseBackgroungLayer* backlayer = [BaseBackgroungLayer node];
-    [backlayer setBackground:nil];
+    [backlayer setBackground:@"backgroundtemp.png"];
     
     BaseLevelLayer* layer = [BaseLevelLayer node];
-    [layer addObstacle:nil location:CGPointMake(250,100) angle:0];
-    [layer addObstacle:nil location:CGPointMake(350,200) angle:0.1f];
-    [layer addEnemy:nil location:CGPointMake(350,250) angle:0];
-    [layer addEnemy:nil location:CGPointMake(230,150) angle:0];
+    [layer setGunArea:ccp(80,90) radius:nil];
+    
+ //   [layer addObstacle:nil location:CGPointMake(240,70) angle:0.0f];
+ //   [layer addObstacle:nil location:CGPointMake(400,70) angle:0.0f];
+    [layer addGameObject:[[Obstacle alloc] initWithPosition:ccp(300,60) andWithAngle:0.0f]];
+    [layer addGameObject:[[Obstacle alloc] initWithPosition:ccp(400,60) andWithAngle:0.0f]];
+    [layer addGameObject:[[DynamicObstacle alloc] initWithPosition:ccp(320,100) andWithAngle:0.0f]];
+    [layer addGameObject:[[GoodBlock alloc] initWithPosition:ccp(300,350) andWithAngle:0.0f]];
+    [layer addGameObject:[[GoodBlock alloc] initWithPosition:ccp(300,250) andWithAngle:0.0f]];
+    [layer addGameObject:[[GoodBlock alloc] initWithPosition:ccp(300,150) andWithAngle:0.0f]];
     
     [scene addChild:backlayer];
     [scene addChild:layer];

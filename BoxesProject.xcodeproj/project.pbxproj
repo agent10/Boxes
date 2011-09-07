@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED01D8F21416C2540000285B /* BaseGameObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D8F11416C2540000285B /* BaseGameObject.mm */; };
+		ED01D8F51416C8530000285B /* DynamicGameObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D8F41416C8530000285B /* DynamicGameObject.mm */; };
+		ED01D8F81416D02D0000285B /* BaseBlock.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D8F71416D02D0000285B /* BaseBlock.mm */; };
+		ED01D8FB1416D4780000285B /* GoodBlock.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D8FA1416D4780000285B /* GoodBlock.mm */; };
+		ED01D8FE1416D5100000285B /* DynamicObstacle.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D8FD1416D5100000285B /* DynamicObstacle.mm */; };
+		ED01D9011416E1950000285B /* StaticGameObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D9001416E1950000285B /* StaticGameObject.mm */; };
+		ED01D9041416E4430000285B /* Obstacle.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D9031416E4430000285B /* Obstacle.mm */; };
+		ED01D9071416E8FE0000285B /* BaseMissle.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D9061416E8FD0000285B /* BaseMissle.mm */; };
+		ED01D90A1416E9F60000285B /* Missle.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D9091416E9F60000285B /* Missle.mm */; };
 		ED4151851411917F00749839 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4151841411917F00749839 /* QuartzCore.framework */; };
 		ED4151871411917F00749839 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4151861411917F00749839 /* OpenGLES.framework */; };
 		ED4151891411917F00749839 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4151881411917F00749839 /* OpenAL.framework */; };
@@ -170,9 +179,29 @@
 		ED918C5A1413B88D008FC17A /* cannon.png in Resources */ = {isa = PBXBuildFile; fileRef = ED918C591413B88D008FC17A /* cannon.png */; };
 		ED918C601413CF27008FC17A /* CannonZone.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED918C5F1413CF26008FC17A /* CannonZone.mm */; };
 		ED918C621413D161008FC17A /* cannonzone.png in Resources */ = {isa = PBXBuildFile; fileRef = ED918C611413D160008FC17A /* cannonzone.png */; };
+		ED918C6914141618008FC17A /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = ED918C6814141618008FC17A /* circle.png */; };
+		ED918C6B14142CCF008FC17A /* beam.png in Resources */ = {isa = PBXBuildFile; fileRef = ED918C6A14142CCE008FC17A /* beam.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED01D8F01416C2540000285B /* BaseGameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseGameObject.h; path = GameObjects/BaseGameObject.h; sourceTree = "<group>"; };
+		ED01D8F11416C2540000285B /* BaseGameObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = BaseGameObject.mm; path = GameObjects/BaseGameObject.mm; sourceTree = "<group>"; };
+		ED01D8F31416C8530000285B /* DynamicGameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DynamicGameObject.h; path = GameObjects/DynamicGameObject.h; sourceTree = "<group>"; };
+		ED01D8F41416C8530000285B /* DynamicGameObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DynamicGameObject.mm; path = GameObjects/DynamicGameObject.mm; sourceTree = "<group>"; };
+		ED01D8F61416D02D0000285B /* BaseBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseBlock.h; path = GameObjects/BaseBlock.h; sourceTree = "<group>"; };
+		ED01D8F71416D02D0000285B /* BaseBlock.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = BaseBlock.mm; path = GameObjects/BaseBlock.mm; sourceTree = "<group>"; };
+		ED01D8F91416D4780000285B /* GoodBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoodBlock.h; path = GameObjects/GoodBlock.h; sourceTree = "<group>"; };
+		ED01D8FA1416D4780000285B /* GoodBlock.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = GoodBlock.mm; path = GameObjects/GoodBlock.mm; sourceTree = "<group>"; };
+		ED01D8FC1416D5100000285B /* DynamicObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DynamicObstacle.h; path = GameObjects/DynamicObstacle.h; sourceTree = "<group>"; };
+		ED01D8FD1416D5100000285B /* DynamicObstacle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DynamicObstacle.mm; path = GameObjects/DynamicObstacle.mm; sourceTree = "<group>"; };
+		ED01D8FF1416E1950000285B /* StaticGameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StaticGameObject.h; path = GameObjects/StaticGameObject.h; sourceTree = "<group>"; };
+		ED01D9001416E1950000285B /* StaticGameObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = StaticGameObject.mm; path = GameObjects/StaticGameObject.mm; sourceTree = "<group>"; };
+		ED01D9021416E4430000285B /* Obstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Obstacle.h; path = GameObjects/Obstacle.h; sourceTree = "<group>"; };
+		ED01D9031416E4430000285B /* Obstacle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Obstacle.mm; path = GameObjects/Obstacle.mm; sourceTree = "<group>"; };
+		ED01D9051416E8FD0000285B /* BaseMissle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseMissle.h; path = GameObjects/BaseMissle.h; sourceTree = "<group>"; };
+		ED01D9061416E8FD0000285B /* BaseMissle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = BaseMissle.mm; path = GameObjects/BaseMissle.mm; sourceTree = "<group>"; };
+		ED01D9081416E9F60000285B /* Missle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Missle.h; path = GameObjects/Missle.h; sourceTree = "<group>"; };
+		ED01D9091416E9F60000285B /* Missle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Missle.mm; path = GameObjects/Missle.mm; sourceTree = "<group>"; };
 		ED4151801411917F00749839 /* BoxesProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxesProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4151841411917F00749839 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ED4151861411917F00749839 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -499,6 +528,8 @@
 		ED918C5F1413CF26008FC17A /* CannonZone.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CannonZone.mm; sourceTree = "<group>"; };
 		ED918C611413D160008FC17A /* cannonzone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cannonzone.png; sourceTree = "<group>"; };
 		ED918C671413E47A008FC17A /* CannonZoneCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CannonZoneCallback.h; sourceTree = "<group>"; };
+		ED918C6814141618008FC17A /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		ED918C6A14142CCE008FC17A /* beam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beam.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -520,6 +551,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED01D8EC1416C1E80000285B /* GameObjects */ = {
+			isa = PBXGroup;
+			children = (
+				ED01D8EF1416C2000000285B /* ConcreteGameObjects */,
+				ED01D8EE1416C1F50000285B /* BaseGameObjects */,
+			);
+			name = GameObjects;
+			sourceTree = "<group>";
+		};
+		ED01D8EE1416C1F50000285B /* BaseGameObjects */ = {
+			isa = PBXGroup;
+			children = (
+				ED01D8F01416C2540000285B /* BaseGameObject.h */,
+				ED01D8F11416C2540000285B /* BaseGameObject.mm */,
+				ED01D8F31416C8530000285B /* DynamicGameObject.h */,
+				ED01D8F41416C8530000285B /* DynamicGameObject.mm */,
+				ED01D8F61416D02D0000285B /* BaseBlock.h */,
+				ED01D8F71416D02D0000285B /* BaseBlock.mm */,
+				ED01D9051416E8FD0000285B /* BaseMissle.h */,
+				ED01D9061416E8FD0000285B /* BaseMissle.mm */,
+				ED01D8FF1416E1950000285B /* StaticGameObject.h */,
+				ED01D9001416E1950000285B /* StaticGameObject.mm */,
+			);
+			name = BaseGameObjects;
+			sourceTree = "<group>";
+		};
+		ED01D8EF1416C2000000285B /* ConcreteGameObjects */ = {
+			isa = PBXGroup;
+			children = (
+				ED01D8F91416D4780000285B /* GoodBlock.h */,
+				ED01D8FA1416D4780000285B /* GoodBlock.mm */,
+				ED01D8FC1416D5100000285B /* DynamicObstacle.h */,
+				ED01D8FD1416D5100000285B /* DynamicObstacle.mm */,
+				ED01D9021416E4430000285B /* Obstacle.h */,
+				ED01D9031416E4430000285B /* Obstacle.mm */,
+				ED01D9081416E9F60000285B /* Missle.h */,
+				ED01D9091416E9F60000285B /* Missle.mm */,
+			);
+			name = ConcreteGameObjects;
+			sourceTree = "<group>";
+		};
 		ED4151751411917F00749839 = {
 			isa = PBXGroup;
 			children = (
@@ -555,6 +627,7 @@
 		ED4151941411917F00749839 /* BoxesProject */ = {
 			isa = PBXGroup;
 			children = (
+				ED01D8EC1416C1E80000285B /* GameObjects */,
 				ED4153591411918300749839 /* AppDelegate.h */,
 				ED41535A1411918300749839 /* AppDelegate.mm */,
 				ED4153711411999800749839 /* BaseLevelLayer.h */,
@@ -581,6 +654,8 @@
 		ED4151951411918000749839 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ED918C6A14142CCE008FC17A /* beam.png */,
+				ED918C6814141618008FC17A /* circle.png */,
 				ED918C611413D160008FC17A /* cannonzone.png */,
 				ED918C591413B88D008FC17A /* cannon.png */,
 				ED918C4F1413B756008FC17A /* Blocks */,
@@ -1120,6 +1195,8 @@
 				ED918C581413B788008FC17A /* green3.png in Resources */,
 				ED918C5A1413B88D008FC17A /* cannon.png in Resources */,
 				ED918C621413D161008FC17A /* cannonzone.png in Resources */,
+				ED918C6914141618008FC17A /* circle.png in Resources */,
+				ED918C6B14142CCF008FC17A /* beam.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1267,6 +1344,15 @@
 				ED4153731411999800749839 /* BaseLevelLayer.mm in Sources */,
 				ED918C4C1413A4B5008FC17A /* BaseBackgroungLayer.m in Sources */,
 				ED918C601413CF27008FC17A /* CannonZone.mm in Sources */,
+				ED01D8F21416C2540000285B /* BaseGameObject.mm in Sources */,
+				ED01D8F51416C8530000285B /* DynamicGameObject.mm in Sources */,
+				ED01D8F81416D02D0000285B /* BaseBlock.mm in Sources */,
+				ED01D8FB1416D4780000285B /* GoodBlock.mm in Sources */,
+				ED01D8FE1416D5100000285B /* DynamicObstacle.mm in Sources */,
+				ED01D9011416E1950000285B /* StaticGameObject.mm in Sources */,
+				ED01D9041416E4430000285B /* Obstacle.mm in Sources */,
+				ED01D9071416E8FE0000285B /* BaseMissle.mm in Sources */,
+				ED01D90A1416E9F60000285B /* Missle.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

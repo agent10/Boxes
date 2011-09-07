@@ -46,13 +46,6 @@
         //		flags += b2DebugDraw::e_pairBit;
         //		flags += b2DebugDraw::e_centerOfMassBit;
 		m_debugDraw->SetFlags(flags);
-        
-        CannonZone* cannon = [CannonZone spriteWithFile: @"cannonzone.png"]; //TODO: shoulb be replaced by image
-        cannon.position = ccp(90,150);
-        [cannon setCallback:(id<CannonZoneCallback>) self];
-        [self addChild:cannon];
-        
-        [self schedule: @selector(tick:)];
     }
     
     return self;
@@ -106,85 +99,44 @@
 	{
 		if (b->GetUserData() != NULL) {
 			//Synchronize the AtlasSprites position and rotation with the corresponding body
-			CCSprite *myActor = (CCSprite*)b->GetUserData();
+			/*CCSprite *myActor = (CCSprite*)b->GetUserData();
+            if(b->GetPosition().y * PTM_RATIO <= -2) { // -2 - delete object, move to the constant
+                [self removeChild:myActor cleanup:YES];
+                world->DestroyBody(b);
+                continue;
+            }
 			myActor.position = CGPointMake( b->GetPosition().x * PTM_RATIO, b->GetPosition().y * PTM_RATIO);
-			myActor.rotation = -1 * CC_RADIANS_TO_DEGREES(b->GetAngle());
+			myActor.rotation = -1 * CC_RADIANS_TO_DEGREES(b->GetAngle());*/
+            BaseGameObject* gameobject = (BaseGameObject*)b->GetUserData();
+            [gameobject updatePosition];
 		}	
 	}
 }
 
--(void) addEnemy: (NSString*)image location: (CGPoint)location angle: (float)angle
-{
-    CCSprite* enemy = [CCSprite spriteWithFile: @"green1.png"]; //TODO: shoulb be replaced by image
-    enemy.position = location;
-    enemy.rotation = -1 * CC_RADIANS_TO_DEGREES(angle);
-    [self addChild:enemy];
-    
-    b2BodyDef bodyDef;
-	bodyDef.type = b2_dynamicBody;
-    
-	bodyDef.position.Set(location.x/PTM_RATIO, location.y/PTM_RATIO);
-	bodyDef.userData = enemy;
-	b2Body *body = world->CreateBody(&bodyDef);
-    
-    float width = 0.5f*[enemy boundingBox].size.width/PTM_RATIO;
-    float height = 0.5f*[enemy boundingBox].size.height/PTM_RATIO;
-	
-	b2PolygonShape dynamicBox;
-	dynamicBox.SetAsBox(width, height);
-	
-	b2FixtureDef fixtureDef;
-	fixtureDef.shape = &dynamicBox;	
-	fixtureDef.density = 0.6f;
-	fixtureDef.friction = 0.3f;
-	body->CreateFixture(&fixtureDef);
-}
-
--(void) addObstacle: (NSString*)image location: (CGPoint)location angle: (float)angle
-{
-    b2BodyDef groundBodyDef;
-    groundBodyDef.position.Set(location.x/PTM_RATIO, location.y/PTM_RATIO); // bottom-left corner
-    groundBodyDef.angle = angle;
-    
-    b2Body* groundBody = world->CreateBody(&groundBodyDef);
-    
-    b2PolygonShape groundBox;		
-    groundBox.SetAsBox(2.0f, 0.4f); //TODO: should be replaced by image.
-    groundBody->CreateFixture(&groundBox,0);
-}
-
 - (void)setGunArea:(CGPoint) location radius: (float)radius
 {
+    CannonZone* cannon = [CannonZone spriteWithFile: @"circle.png"]; //TODO: shoulb be replaced by image
+    cannon.position = location;
+    [cannon setCallback:(id<CannonZoneCallback>) self];
+    [self addChild:cannon];
     
+    [self schedule: @selector(tick:)];
 }
 
 -(void) fire: (CGPoint)location vec: (CGPoint)vec force: (float)force
+{    
+    BaseGameObject* missle = [self addGameObject:[[Missle alloc] initWithPosition:ccp(location.x, location.y) andWithAngle:0]];
+    
+    b2Body* body = [missle getBody];
+    body->ApplyForce(b2Vec2(force*vec.x,force*vec.y), b2Vec2(location.x/PTM_RATIO, location.y/PTM_RATIO));
+}
+
+-(BaseGameObject*) addGameObject:(BaseGameObject*) gameObject
 {
-    CCSprite* enemy = [CCSprite spriteWithFile: @"ball.png"]; //TODO: shoulb be replaced by image
-    enemy.scale = 0.1f;
-    enemy.position = location;
-    [self addChild:enemy];
-    
-    b2BodyDef bodyDef;
-	bodyDef.type = b2_dynamicBody;
-    
-	bodyDef.position.Set(location.x/PTM_RATIO, location.y/PTM_RATIO);
-	bodyDef.userData = enemy;
-	b2Body *body = world->CreateBody(&bodyDef);
-    
-    float width = 0.5f*[enemy boundingBox].size.width/PTM_RATIO;
-    float height = 0.5f*[enemy boundingBox].size.height/PTM_RATIO;
-	
-    b2CircleShape dynamicCircle;
-    dynamicCircle.m_radius = width;
-	
-	b2FixtureDef fixtureDef;
-	fixtureDef.shape = &dynamicCircle;	
-	fixtureDef.density = 3.0f;
-	fixtureDef.friction = 0.3f;
-	body->CreateFixture(&fixtureDef);
-    
-    body->ApplyForce(b2Vec2(100*vec.x,100*vec.y), b2Vec2(location.x/PTM_RATIO, location.y/PTM_RATIO));
+    if(gameObject != nil) {
+        [gameObject makeObjectWithLayer:self andWorld:world];
+    }
+    return gameObject;
 }
          
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -208,8 +160,6 @@
 		CGPoint location = [touch locationInView: [touch view]];
 		
 		location = [[CCDirector sharedDirector] convertToGL: location];
-		
-     //   [self fire:location vec:ccp(-location.x + fpoint.x,-location.y + fpoint.y) force:0];
 	}
 }
 

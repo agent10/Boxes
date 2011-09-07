@@ -10,6 +10,8 @@
 #import "Box2D.h"
 #import "GLES-Render.h"
 #import "CannonZone.h"
+#import "BaseGameObject.h"
+#import "Missle.h"
 
 @interface BaseLevelLayer : CCLayer
 {
@@ -18,9 +20,8 @@
     GLESDebugDraw *m_debugDraw;
 }
 
--(void) addEnemy: (NSString*)image location: (CGPoint)location angle: (float)angle;
--(void) addObstacle: (NSString*)image location: (CGPoint)location angle: (float)angle;
 -(void) setGunArea:(CGPoint) location radius: (float)radius;
 -(void) fire: (CGPoint)location vec: (CGPoint)vec force: (float)force;
+-(BaseGameObject*) addGameObject:(BaseGameObject*) gameObject;
 
 @end

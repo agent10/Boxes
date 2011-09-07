@@ -22,7 +22,10 @@
 
 - (void)setBackground: (NSString*)file
 {
-    CCSprite* background = [CCSprite spriteWithFile: @"backgroundtemp.png"]; //TODO: shoulb be replaced by image
+    CCSprite* background = [CCSprite spriteWithFile: file];
+    if(background == nil) {
+        return;
+    }
     background.position = ccp(background.boundingBox.size.width / 2,background.boundingBox.size.height / 2);
     [self addChild:background];
 }
