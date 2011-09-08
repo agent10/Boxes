@@ -16,6 +16,11 @@
 		ED01D9041416E4430000285B /* Obstacle.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D9031416E4430000285B /* Obstacle.mm */; };
 		ED01D9071416E8FE0000285B /* BaseMissle.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D9061416E8FD0000285B /* BaseMissle.mm */; };
 		ED01D90A1416E9F60000285B /* Missle.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D9091416E9F60000285B /* Missle.mm */; };
+		ED01D90D141925AE0000285B /* BaseForegroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED01D90C141925AD0000285B /* BaseForegroundLayer.m */; };
+		ED01D91614192D400000285B /* mis1.png in Resources */ = {isa = PBXBuildFile; fileRef = ED01D91314192D400000285B /* mis1.png */; };
+		ED01D91714192D400000285B /* mis2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED01D91414192D400000285B /* mis2.png */; };
+		ED01D91814192D400000285B /* mis3.png in Resources */ = {isa = PBXBuildFile; fileRef = ED01D91514192D400000285B /* mis3.png */; };
+		ED01D91F14193FCE0000285B /* BaseScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D91E14193FCB0000285B /* BaseScene.mm */; };
 		ED4151851411917F00749839 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4151841411917F00749839 /* QuartzCore.framework */; };
 		ED4151871411917F00749839 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4151861411917F00749839 /* OpenGLES.framework */; };
 		ED4151891411917F00749839 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4151881411917F00749839 /* OpenAL.framework */; };
@@ -165,7 +170,6 @@
 		ED4153581411918300749839 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4153571411918300749839 /* main.m */; };
 		ED41535B1411918300749839 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED41535A1411918300749839 /* AppDelegate.mm */; };
 		ED41535E1411918300749839 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED41535D1411918300749839 /* RootViewController.m */; };
-		ED4153611411918300749839 /* HelloWorldLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED4153601411918300749839 /* HelloWorldLayer.mm */; };
 		ED4153641411918300749839 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED4153631411918300749839 /* GLES-Render.mm */; };
 		ED4153671411918300749839 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = ED4153661411918300749839 /* blocks.png */; };
 		ED4153731411999800749839 /* BaseLevelLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED4153721411999800749839 /* BaseLevelLayer.mm */; };
@@ -202,6 +206,15 @@
 		ED01D9061416E8FD0000285B /* BaseMissle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = BaseMissle.mm; path = GameObjects/BaseMissle.mm; sourceTree = "<group>"; };
 		ED01D9081416E9F60000285B /* Missle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Missle.h; path = GameObjects/Missle.h; sourceTree = "<group>"; };
 		ED01D9091416E9F60000285B /* Missle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Missle.mm; path = GameObjects/Missle.mm; sourceTree = "<group>"; };
+		ED01D90B141925AC0000285B /* BaseForegroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseForegroundLayer.h; sourceTree = "<group>"; };
+		ED01D90C141925AD0000285B /* BaseForegroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseForegroundLayer.m; sourceTree = "<group>"; };
+		ED01D91314192D400000285B /* mis1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mis1.png; sourceTree = "<group>"; };
+		ED01D91414192D400000285B /* mis2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mis2.png; sourceTree = "<group>"; };
+		ED01D91514192D400000285B /* mis3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mis3.png; sourceTree = "<group>"; };
+		ED01D91914193B110000285B /* ForegroundCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForegroundCallback.h; sourceTree = "<group>"; };
+		ED01D91D14193FCA0000285B /* BaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScene.h; sourceTree = "<group>"; };
+		ED01D91E14193FCB0000285B /* BaseScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BaseScene.mm; sourceTree = "<group>"; };
+		ED01D920141956030000285B /* LevelCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCallback.h; sourceTree = "<group>"; };
 		ED4151801411917F00749839 /* BoxesProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxesProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4151841411917F00749839 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ED4151861411917F00749839 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -507,8 +520,6 @@
 		ED41535A1411918300749839 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		ED41535C1411918300749839 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		ED41535D1411918300749839 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		ED41535F1411918300749839 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		ED4153601411918300749839 /* HelloWorldLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HelloWorldLayer.mm; sourceTree = "<group>"; };
 		ED4153621411918300749839 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		ED4153631411918300749839 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		ED4153651411918300749839 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
@@ -592,6 +603,16 @@
 			name = ConcreteGameObjects;
 			sourceTree = "<group>";
 		};
+		ED01D91214192C5A0000285B /* Missles */ = {
+			isa = PBXGroup;
+			children = (
+				ED01D91314192D400000285B /* mis1.png */,
+				ED01D91414192D400000285B /* mis2.png */,
+				ED01D91514192D400000285B /* mis3.png */,
+			);
+			name = Missles;
+			sourceTree = "<group>";
+		};
 		ED4151751411917F00749839 = {
 			isa = PBXGroup;
 			children = (
@@ -632,15 +653,19 @@
 				ED41535A1411918300749839 /* AppDelegate.mm */,
 				ED4153711411999800749839 /* BaseLevelLayer.h */,
 				ED4153721411999800749839 /* BaseLevelLayer.mm */,
+				ED01D920141956030000285B /* LevelCallback.h */,
 				ED918C4A1413A4B5008FC17A /* BaseBackgroungLayer.h */,
 				ED918C4B1413A4B5008FC17A /* BaseBackgroungLayer.m */,
+				ED01D90B141925AC0000285B /* BaseForegroundLayer.h */,
+				ED01D90C141925AD0000285B /* BaseForegroundLayer.m */,
+				ED01D91914193B110000285B /* ForegroundCallback.h */,
+				ED01D91D14193FCA0000285B /* BaseScene.h */,
+				ED01D91E14193FCB0000285B /* BaseScene.mm */,
 				ED918C5E1413CF26008FC17A /* CannonZone.h */,
 				ED918C5F1413CF26008FC17A /* CannonZone.mm */,
 				ED918C671413E47A008FC17A /* CannonZoneCallback.h */,
 				ED41535C1411918300749839 /* RootViewController.h */,
 				ED41535D1411918300749839 /* RootViewController.m */,
-				ED41535F1411918300749839 /* HelloWorldLayer.h */,
-				ED4153601411918300749839 /* HelloWorldLayer.mm */,
 				ED4153621411918300749839 /* GLES-Render.h */,
 				ED4153631411918300749839 /* GLES-Render.mm */,
 				ED4153651411918300749839 /* GameConfig.h */,
@@ -654,6 +679,7 @@
 		ED4151951411918000749839 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ED01D91214192C5A0000285B /* Missles */,
 				ED918C6A14142CCE008FC17A /* beam.png */,
 				ED918C6814141618008FC17A /* circle.png */,
 				ED918C611413D160008FC17A /* cannonzone.png */,
@@ -1197,6 +1223,9 @@
 				ED918C621413D161008FC17A /* cannonzone.png in Resources */,
 				ED918C6914141618008FC17A /* circle.png in Resources */,
 				ED918C6B14142CCF008FC17A /* beam.png in Resources */,
+				ED01D91614192D400000285B /* mis1.png in Resources */,
+				ED01D91714192D400000285B /* mis2.png in Resources */,
+				ED01D91814192D400000285B /* mis3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1339,7 +1368,6 @@
 				ED4153581411918300749839 /* main.m in Sources */,
 				ED41535B1411918300749839 /* AppDelegate.mm in Sources */,
 				ED41535E1411918300749839 /* RootViewController.m in Sources */,
-				ED4153611411918300749839 /* HelloWorldLayer.mm in Sources */,
 				ED4153641411918300749839 /* GLES-Render.mm in Sources */,
 				ED4153731411999800749839 /* BaseLevelLayer.mm in Sources */,
 				ED918C4C1413A4B5008FC17A /* BaseBackgroungLayer.m in Sources */,
@@ -1353,6 +1381,8 @@
 				ED01D9041416E4430000285B /* Obstacle.mm in Sources */,
 				ED01D9071416E8FE0000285B /* BaseMissle.mm in Sources */,
 				ED01D90A1416E9F60000285B /* Missle.mm in Sources */,
+				ED01D90D141925AE0000285B /* BaseForegroundLayer.m in Sources */,
+				ED01D91F14193FCE0000285B /* BaseScene.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

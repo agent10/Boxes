@@ -93,21 +93,17 @@
 	
 	world->Step(dt, velocityIterations, positionIterations);
     
-	
-	//Iterate over the bodies in the physics world
 	for (b2Body* b = world->GetBodyList(); b; b = b->GetNext())
 	{
 		if (b->GetUserData() != NULL) {
-			//Synchronize the AtlasSprites position and rotation with the corresponding body
-			/*CCSprite *myActor = (CCSprite*)b->GetUserData();
-            if(b->GetPosition().y * PTM_RATIO <= -2) { // -2 - delete object, move to the constant
-                [self removeChild:myActor cleanup:YES];
-                world->DestroyBody(b);
+            BaseGameObject* gameobject = (BaseGameObject*)b->GetUserData();
+            if(b->GetPosition().y * PTM_RATIO <= -5) { // -5 - delete object, move to the constant
+                [self removeChild:[gameobject getSprite] cleanup:YES];
+                world->DestroyBody([gameobject getBody]);
+                [gameobject release];
+                [delegate newScore:15];
                 continue;
             }
-			myActor.position = CGPointMake( b->GetPosition().x * PTM_RATIO, b->GetPosition().y * PTM_RATIO);
-			myActor.rotation = -1 * CC_RADIANS_TO_DEGREES(b->GetAngle());*/
-            BaseGameObject* gameobject = (BaseGameObject*)b->GetUserData();
             [gameobject updatePosition];
 		}	
 	}
@@ -138,32 +134,15 @@
     }
     return gameObject;
 }
-         
-- (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+
+- (void) setCallback:(id<LevelCallback>) callback
 {
-    for( UITouch *touch in touches ) {
-		CGPoint location = [touch locationInView: [touch view]];
-		location = [[CCDirector sharedDirector] convertToGL: location];
-	}
+    delegate = callback;
 }
 
-- (void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+- (void) setActiveMissle:(int)missle
 {
-    for( UITouch *touch in touches ) {
-        CGPoint location = [self convertTouchToNodeSpace: touch];
-    }
+    
 }
-
-- (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-	for( UITouch *touch in touches ) {
-		CGPoint location = [touch locationInView: [touch view]];
-		
-		location = [[CCDirector sharedDirector] convertToGL: location];
-	}
-}
-
-
-
 
 @end

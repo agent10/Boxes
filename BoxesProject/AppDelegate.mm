@@ -12,10 +12,12 @@
 #import "GameConfig.h"
 #import "BaseBackgroungLayer.h"
 #import "BaseLevelLayer.h"
+#import "BaseForegroundLayer.h"
 #import "RootViewController.h"
 #import "GoodBlock.h"
 #import "Obstacle.h"
 #import "DynamicObstacle.h"
+#import "BaseScene.h"
 
 @implementation AppDelegate
 
@@ -115,16 +117,11 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-    CCScene* scene = [CCScene node];
-    
-    BaseBackgroungLayer* backlayer = [BaseBackgroungLayer node];
-    [backlayer setBackground:@"backgroundtemp.png"];
+    BaseScene* newScene = [BaseScene node];
+    [newScene setBackground:@"backgroundtemp.png"];
     
     BaseLevelLayer* layer = [BaseLevelLayer node];
-    [layer setGunArea:ccp(80,90) radius:nil];
-    
- //   [layer addObstacle:nil location:CGPointMake(240,70) angle:0.0f];
- //   [layer addObstacle:nil location:CGPointMake(400,70) angle:0.0f];
+    [layer setGunArea:ccp(80,130) radius:nil];
     [layer addGameObject:[[Obstacle alloc] initWithPosition:ccp(300,60) andWithAngle:0.0f]];
     [layer addGameObject:[[Obstacle alloc] initWithPosition:ccp(400,60) andWithAngle:0.0f]];
     [layer addGameObject:[[DynamicObstacle alloc] initWithPosition:ccp(320,100) andWithAngle:0.0f]];
@@ -132,10 +129,14 @@
     [layer addGameObject:[[GoodBlock alloc] initWithPosition:ccp(300,250) andWithAngle:0.0f]];
     [layer addGameObject:[[GoodBlock alloc] initWithPosition:ccp(300,150) andWithAngle:0.0f]];
     
-    [scene addChild:backlayer];
-    [scene addChild:layer];
+    [newScene setLevel:layer];
     
-	[[CCDirector sharedDirector] runWithScene: scene];
+	[[CCDirector sharedDirector] runWithScene: newScene];
+}
+
+- (void)newMissleSelected: (int)tag
+{
+    
 }
 
 

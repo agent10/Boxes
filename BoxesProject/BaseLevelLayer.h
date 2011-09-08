@@ -12,16 +12,21 @@
 #import "CannonZone.h"
 #import "BaseGameObject.h"
 #import "Missle.h"
+#import "LevelCallback.h"
 
 @interface BaseLevelLayer : CCLayer
 {
     @protected
     b2World* world;
     GLESDebugDraw *m_debugDraw;
+    @private
+    id<LevelCallback> delegate;
 }
 
--(void) setGunArea:(CGPoint) location radius: (float)radius;
--(void) fire: (CGPoint)location vec: (CGPoint)vec force: (float)force;
--(BaseGameObject*) addGameObject:(BaseGameObject*) gameObject;
+- (void) setGunArea:(CGPoint) location radius: (float)radius;
+- (void) fire: (CGPoint)location vec: (CGPoint)vec force: (float)force;
+- (BaseGameObject*) addGameObject:(BaseGameObject*) gameObject;
+- (void) setCallback:(id<LevelCallback>) callback;
+- (void) setActiveMissle:(int)missle;
 
 @end
