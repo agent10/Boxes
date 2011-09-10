@@ -21,6 +21,8 @@
 		ED01D91714192D400000285B /* mis2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED01D91414192D400000285B /* mis2.png */; };
 		ED01D91814192D400000285B /* mis3.png in Resources */ = {isa = PBXBuildFile; fileRef = ED01D91514192D400000285B /* mis3.png */; };
 		ED01D91F14193FCE0000285B /* BaseScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D91E14193FCB0000285B /* BaseScene.mm */; };
+		ED01D9231419659F0000285B /* MissleType2.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D9221419659E0000285B /* MissleType2.mm */; };
+		ED01D926141965DD0000285B /* MissleType3.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D925141965DC0000285B /* MissleType3.mm */; };
 		ED4151851411917F00749839 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4151841411917F00749839 /* QuartzCore.framework */; };
 		ED4151871411917F00749839 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4151861411917F00749839 /* OpenGLES.framework */; };
 		ED4151891411917F00749839 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4151881411917F00749839 /* OpenAL.framework */; };
@@ -173,6 +175,13 @@
 		ED4153641411918300749839 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED4153631411918300749839 /* GLES-Render.mm */; };
 		ED4153671411918300749839 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = ED4153661411918300749839 /* blocks.png */; };
 		ED4153731411999800749839 /* BaseLevelLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED4153721411999800749839 /* BaseLevelLayer.mm */; };
+		ED89BF1B141B637A00732B11 /* ContactReceiver.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED89BF1A141B637A00732B11 /* ContactReceiver.mm */; };
+		ED89BF22141B8B1100732B11 /* Bomb.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED89BF21141B8B1100732B11 /* Bomb.mm */; };
+		ED89BF24141B8BEC00732B11 /* bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = ED89BF23141B8BEC00732B11 /* bomb.png */; };
+		ED89BF28141B9F9600732B11 /* ScoreSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = ED89BF27141B9F9600732B11 /* ScoreSprite.m */; };
+		ED89BF2A141BBFF000732B11 /* blue2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED89BF29141BBFF000732B11 /* blue2.png */; };
+		ED89BF2D141BC03900732B11 /* BadBlock.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED89BF2C141BC03900732B11 /* BadBlock.mm */; };
+		ED89BF34141BDC3C00732B11 /* SceneLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED89BF33141BDC3C00732B11 /* SceneLoader.mm */; };
 		ED918C481413A494008FC17A /* backgroundtemp.png in Resources */ = {isa = PBXBuildFile; fileRef = ED918C471413A494008FC17A /* backgroundtemp.png */; };
 		ED918C4C1413A4B5008FC17A /* BaseBackgroungLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED918C4B1413A4B5008FC17A /* BaseBackgroungLayer.m */; };
 		ED918C4E1413B036008FC17A /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = ED918C4D1413B036008FC17A /* ball.png */; };
@@ -215,6 +224,10 @@
 		ED01D91D14193FCA0000285B /* BaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScene.h; sourceTree = "<group>"; };
 		ED01D91E14193FCB0000285B /* BaseScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BaseScene.mm; sourceTree = "<group>"; };
 		ED01D920141956030000285B /* LevelCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCallback.h; sourceTree = "<group>"; };
+		ED01D9211419659D0000285B /* MissleType2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissleType2.h; sourceTree = "<group>"; };
+		ED01D9221419659E0000285B /* MissleType2.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MissleType2.mm; sourceTree = "<group>"; };
+		ED01D924141965DB0000285B /* MissleType3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissleType3.h; sourceTree = "<group>"; };
+		ED01D925141965DC0000285B /* MissleType3.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MissleType3.mm; sourceTree = "<group>"; };
 		ED4151801411917F00749839 /* BoxesProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxesProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4151841411917F00749839 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ED4151861411917F00749839 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -526,6 +539,20 @@
 		ED4153661411918300749839 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
 		ED4153711411999800749839 /* BaseLevelLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLevelLayer.h; sourceTree = "<group>"; };
 		ED4153721411999800749839 /* BaseLevelLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BaseLevelLayer.mm; sourceTree = "<group>"; };
+		ED89BF18141B636B00732B11 /* ContactReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactReceiver.h; sourceTree = "<group>"; };
+		ED89BF1A141B637A00732B11 /* ContactReceiver.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ContactReceiver.mm; sourceTree = "<group>"; };
+		ED89BF1F141B764900732B11 /* ContactReceiverCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactReceiverCallback.h; sourceTree = "<group>"; };
+		ED89BF20141B8B1100732B11 /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bomb.h; path = GameObjects/Bomb.h; sourceTree = "<group>"; };
+		ED89BF21141B8B1100732B11 /* Bomb.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Bomb.mm; path = GameObjects/Bomb.mm; sourceTree = "<group>"; };
+		ED89BF23141B8BEC00732B11 /* bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bomb.png; sourceTree = "<group>"; };
+		ED89BF26141B9F9600732B11 /* ScoreSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreSprite.h; sourceTree = "<group>"; };
+		ED89BF27141B9F9600732B11 /* ScoreSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreSprite.m; sourceTree = "<group>"; };
+		ED89BF29141BBFF000732B11 /* blue2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue2.png; sourceTree = "<group>"; };
+		ED89BF2B141BC03800732B11 /* BadBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadBlock.h; sourceTree = "<group>"; };
+		ED89BF2C141BC03900732B11 /* BadBlock.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BadBlock.mm; sourceTree = "<group>"; };
+		ED89BF32141BDC3C00732B11 /* SceneLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneLoader.h; path = Game/SceneLoader.h; sourceTree = "<group>"; };
+		ED89BF33141BDC3C00732B11 /* SceneLoader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SceneLoader.mm; path = Game/SceneLoader.mm; sourceTree = "<group>"; };
+		ED89BF35141BE86E00732B11 /* BaseSceneCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSceneCallback.h; sourceTree = "<group>"; };
 		ED918C471413A494008FC17A /* backgroundtemp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundtemp.png; path = Resources/backgroundtemp.png; sourceTree = "<group>"; };
 		ED918C4A1413A4B5008FC17A /* BaseBackgroungLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseBackgroungLayer.h; sourceTree = "<group>"; };
 		ED918C4B1413A4B5008FC17A /* BaseBackgroungLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseBackgroungLayer.m; sourceTree = "<group>"; };
@@ -591,6 +618,10 @@
 		ED01D8EF1416C2000000285B /* ConcreteGameObjects */ = {
 			isa = PBXGroup;
 			children = (
+				ED89BF2B141BC03800732B11 /* BadBlock.h */,
+				ED89BF2C141BC03900732B11 /* BadBlock.mm */,
+				ED89BF20141B8B1100732B11 /* Bomb.h */,
+				ED89BF21141B8B1100732B11 /* Bomb.mm */,
 				ED01D8F91416D4780000285B /* GoodBlock.h */,
 				ED01D8FA1416D4780000285B /* GoodBlock.mm */,
 				ED01D8FC1416D5100000285B /* DynamicObstacle.h */,
@@ -599,6 +630,10 @@
 				ED01D9031416E4430000285B /* Obstacle.mm */,
 				ED01D9081416E9F60000285B /* Missle.h */,
 				ED01D9091416E9F60000285B /* Missle.mm */,
+				ED01D9211419659D0000285B /* MissleType2.h */,
+				ED01D9221419659E0000285B /* MissleType2.mm */,
+				ED01D924141965DB0000285B /* MissleType3.h */,
+				ED01D925141965DC0000285B /* MissleType3.mm */,
 			);
 			name = ConcreteGameObjects;
 			sourceTree = "<group>";
@@ -648,6 +683,8 @@
 		ED4151941411917F00749839 /* BoxesProject */ = {
 			isa = PBXGroup;
 			children = (
+				ED89BF2E141BDC0500732B11 /* Game */,
+				ED89BF25141B9F6B00732B11 /* Scores */,
 				ED01D8EC1416C1E80000285B /* GameObjects */,
 				ED4153591411918300749839 /* AppDelegate.h */,
 				ED41535A1411918300749839 /* AppDelegate.mm */,
@@ -658,9 +695,13 @@
 				ED918C4B1413A4B5008FC17A /* BaseBackgroungLayer.m */,
 				ED01D90B141925AC0000285B /* BaseForegroundLayer.h */,
 				ED01D90C141925AD0000285B /* BaseForegroundLayer.m */,
+				ED89BF18141B636B00732B11 /* ContactReceiver.h */,
+				ED89BF1A141B637A00732B11 /* ContactReceiver.mm */,
+				ED89BF1F141B764900732B11 /* ContactReceiverCallback.h */,
 				ED01D91914193B110000285B /* ForegroundCallback.h */,
 				ED01D91D14193FCA0000285B /* BaseScene.h */,
 				ED01D91E14193FCB0000285B /* BaseScene.mm */,
+				ED89BF35141BE86E00732B11 /* BaseSceneCallback.h */,
 				ED918C5E1413CF26008FC17A /* CannonZone.h */,
 				ED918C5F1413CF26008FC17A /* CannonZone.mm */,
 				ED918C671413E47A008FC17A /* CannonZoneCallback.h */,
@@ -679,6 +720,7 @@
 		ED4151951411918000749839 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ED89BF23141B8BEC00732B11 /* bomb.png */,
 				ED01D91214192C5A0000285B /* Missles */,
 				ED918C6A14142CCE008FC17A /* beam.png */,
 				ED918C6814141618008FC17A /* circle.png */,
@@ -1142,9 +1184,28 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		ED89BF25141B9F6B00732B11 /* Scores */ = {
+			isa = PBXGroup;
+			children = (
+				ED89BF26141B9F9600732B11 /* ScoreSprite.h */,
+				ED89BF27141B9F9600732B11 /* ScoreSprite.m */,
+			);
+			name = Scores;
+			sourceTree = "<group>";
+		};
+		ED89BF2E141BDC0500732B11 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				ED89BF32141BDC3C00732B11 /* SceneLoader.h */,
+				ED89BF33141BDC3C00732B11 /* SceneLoader.mm */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
 		ED918C4F1413B756008FC17A /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
+				ED89BF29141BBFF000732B11 /* blue2.png */,
 				ED918C511413B788008FC17A /* blue1.png */,
 				ED918C521413B788008FC17A /* green1.png */,
 				ED918C531413B788008FC17A /* green2.png */,
@@ -1226,6 +1287,8 @@
 				ED01D91614192D400000285B /* mis1.png in Resources */,
 				ED01D91714192D400000285B /* mis2.png in Resources */,
 				ED01D91814192D400000285B /* mis3.png in Resources */,
+				ED89BF24141B8BEC00732B11 /* bomb.png in Resources */,
+				ED89BF2A141BBFF000732B11 /* blue2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1383,6 +1446,13 @@
 				ED01D90A1416E9F60000285B /* Missle.mm in Sources */,
 				ED01D90D141925AE0000285B /* BaseForegroundLayer.m in Sources */,
 				ED01D91F14193FCE0000285B /* BaseScene.mm in Sources */,
+				ED01D9231419659F0000285B /* MissleType2.mm in Sources */,
+				ED01D926141965DD0000285B /* MissleType3.mm in Sources */,
+				ED89BF1B141B637A00732B11 /* ContactReceiver.mm in Sources */,
+				ED89BF22141B8B1100732B11 /* Bomb.mm in Sources */,
+				ED89BF28141B9F9600732B11 /* ScoreSprite.m in Sources */,
+				ED89BF2D141BC03900732B11 /* BadBlock.mm in Sources */,
+				ED89BF34141BDC3C00732B11 /* SceneLoader.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

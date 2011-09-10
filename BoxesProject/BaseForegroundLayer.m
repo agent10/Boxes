@@ -43,6 +43,11 @@
         mis1.tag = 3;
         [self addChild:mis3];
         
+        selectedMissle = [CCSprite spriteWithFile: @"circle.png"];
+        selectedMissle.scale = 0.6f;
+        selectedMissle.position = mis1.position;
+        [self addChild:selectedMissle];
+        
         self.isTouchEnabled = YES;
         [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:NO];
     }
@@ -63,19 +68,33 @@
     delegate = callback;
 }
 
+- (void) fail
+{
+    //fail
+}
+
+- (void) win:(BOOL)isExcelent
+{
+    //win
+}
+
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
 	return YES; 
 }
 
+//TODO: rewrite function
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
 	CGPoint location = [self convertTouchToNodeSpace: touch];
     int tag = 0;
     if (CGRectContainsPoint(mis1.boundingBox, location)) {
         tag = 1;
+        selectedMissle.position = mis1.position;
     } else if (CGRectContainsPoint(mis2.boundingBox, location)) {
         tag = 2;
+        selectedMissle.position = mis2.position;
     } else if (CGRectContainsPoint(mis3.boundingBox, location)) {
         tag = 3;
+        selectedMissle.position = mis3.position;
     }
     if(tag != 0) {
         [delegate newMissleSelected:tag];

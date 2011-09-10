@@ -11,4 +11,6 @@
 @protocol LevelCallback <NSObject>
 @optional
 - (void)newScore: (int)score;
+- (void)gameObjectFell:(int)gameObjectID;
+- (void)gameObjectsContactID1:(int)id1 andID2:(int)id2;
 @end

@@ -10,14 +10,8 @@
 
 #import "AppDelegate.h"
 #import "GameConfig.h"
-#import "BaseBackgroungLayer.h"
-#import "BaseLevelLayer.h"
-#import "BaseForegroundLayer.h"
-#import "RootViewController.h"
-#import "GoodBlock.h"
-#import "Obstacle.h"
-#import "DynamicObstacle.h"
-#import "BaseScene.h"
+#import "SceneLoader.h"
+#import "BaseSceneCallback.h"
 
 @implementation AppDelegate
 
@@ -115,28 +109,23 @@
 	
 	// Removes the startup flicker
 	[self removeStartupFlicker];
-	
-	// Run the intro Scene
-    BaseScene* newScene = [BaseScene node];
-    [newScene setBackground:@"backgroundtemp.png"];
-    
-    BaseLevelLayer* layer = [BaseLevelLayer node];
-    [layer setGunArea:ccp(80,130) radius:nil];
-    [layer addGameObject:[[Obstacle alloc] initWithPosition:ccp(300,60) andWithAngle:0.0f]];
-    [layer addGameObject:[[Obstacle alloc] initWithPosition:ccp(400,60) andWithAngle:0.0f]];
-    [layer addGameObject:[[DynamicObstacle alloc] initWithPosition:ccp(320,100) andWithAngle:0.0f]];
-    [layer addGameObject:[[GoodBlock alloc] initWithPosition:ccp(300,350) andWithAngle:0.0f]];
-    [layer addGameObject:[[GoodBlock alloc] initWithPosition:ccp(300,250) andWithAngle:0.0f]];
-    [layer addGameObject:[[GoodBlock alloc] initWithPosition:ccp(300,150) andWithAngle:0.0f]];
-    
-    [newScene setLevel:layer];
-    
-	[[CCDirector sharedDirector] runWithScene: newScene];
+
+
+    BaseScene* scene = [SceneLoader loadScene:1];
+    [scene setCallback:(id<BaseSceneCallback>)self];
+	[[CCDirector sharedDirector] runWithScene: scene];
 }
 
 - (void)newMissleSelected: (int)tag
 {
     
+}
+
+- (void) win:(BOOL)excellent
+{
+    /*BaseScene* scene = [SceneLoader loadScene:2];
+    [scene setCallback:(id<BaseSceneCallback>)self];
+	[[CCDirector sharedDirector] replaceScene:scene];*/
 }
 
 

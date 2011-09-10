@@ -15,6 +15,7 @@
     self = [super init];
     if (self) {
         // Initialization code here.
+        gameObjectID = 0;
     }
     
     return self;
@@ -59,6 +60,11 @@
     
 }
 
+- (void) actionByContactWithObject:(int)objectID layer:(CCLayer*) layer andWorld:(b2World*) world;
+{
+    
+}
+
 - (CCSprite*) getSprite
 {
     return sprite;
@@ -83,6 +89,16 @@
             sprite.rotation = -1 * CC_RADIANS_TO_DEGREES(body->GetAngle());
         }
     }
+}
+
+- (int) getGameObjectID
+{
+    return gameObjectID;
+}
+
+- (BOOL) shouldBeDeleted
+{
+    return shouldBeDeleted;
 }
 
 @end

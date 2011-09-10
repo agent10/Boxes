@@ -1,21 +1,21 @@
 //
-//  GoodBlock.m
+//  BadBlock.m
 //  BoxesProject
 //
-//  Created by Kirill Olenyov on 9/7/11.
+//  Created by Kirill Olenyov on 9/10/11.
 //  Copyright 2011 House. All rights reserved.
 //
 
-#import "GoodBlock.h"
+#import "BadBlock.h"
 
-@implementation GoodBlock
+@implementation BadBlock
 
 - (id)init
 {
     self = [super init];
     if (self) {
         // Initialization code here.
-        gameObjectID = GOOD_BLOCK_ID;
+        gameObjectID = BAD_BLOCK_ID;
     }
     
     return self;
@@ -26,7 +26,7 @@
     self = [super initWithPosition:p andWithAngle:a];
     if (self) {
         // Initialization code here.
-        imagepath = @"green3.png";
+        imagepath = @"blue2.png";
     }
     
     return self;

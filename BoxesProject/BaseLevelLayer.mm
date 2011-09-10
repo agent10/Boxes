@@ -7,6 +7,7 @@
 //
 
 #import "BaseLevelLayer.h"
+#import "ContactReceiver.h"
 
 //Pixel to metres ratio.
 #define PTM_RATIO 32
@@ -34,6 +35,9 @@
 		world = new b2World(gravity, doSleep);
 		
 		world->SetContinuousPhysics(true);
+        
+        contactReceiver = new ContactReceiver((id<ContactReceiverCallback>)self);
+        world->SetContactListener(contactReceiver);
 		
 		// Debug Draw functions
 		m_debugDraw = new GLESDebugDraw( PTM_RATIO );
@@ -97,11 +101,20 @@
 	{
 		if (b->GetUserData() != NULL) {
             BaseGameObject* gameobject = (BaseGameObject*)b->GetUserData();
+            if([gameobject shouldBeDeleted]) {
+                [self removeGameObject:gameobject];
+                continue;
+            }
+            
             if(b->GetPosition().y * PTM_RATIO <= -5) { // -5 - delete object, move to the constant
-                [self removeChild:[gameobject getSprite] cleanup:YES];
-                world->DestroyBody([gameobject getBody]);
-                [gameobject release];
-                [delegate newScore:15];
+                int gameObjectID = [gameobject getGameObjectID];
+                CGPoint pos = [gameobject getSprite].position;
+                [self addChild:[ScoreSprite scoreSpriteWithScoreValue:1550 position:pos]];
+                
+                [self removeGameObject:gameobject];
+                
+                [delegate newScore:15]; //TODO: Remove this callback
+                [delegate gameObjectFell:gameObjectID];
                 continue;
             }
             [gameobject updatePosition];
@@ -121,10 +134,11 @@
 
 -(void) fire: (CGPoint)location vec: (CGPoint)vec force: (float)force
 {    
-    BaseGameObject* missle = [self addGameObject:[[Missle alloc] initWithPosition:ccp(location.x, location.y) andWithAngle:0]];
-    
+    BaseMissle* baseMissle = [self createMissle:location];
+    BaseGameObject* missle = [self addGameObject:baseMissle];    
     b2Body* body = [missle getBody];
-    body->ApplyForce(b2Vec2(force*vec.x,force*vec.y), b2Vec2(location.x/PTM_RATIO, location.y/PTM_RATIO));
+    float endforce = force * [baseMissle getForceValue];
+    body->ApplyForce(b2Vec2(endforce*vec.x,endforce*vec.y), b2Vec2(location.x/PTM_RATIO, location.y/PTM_RATIO));
 }
 
 -(BaseGameObject*) addGameObject:(BaseGameObject*) gameObject
@@ -132,7 +146,25 @@
     if(gameObject != nil) {
         [gameObject makeObjectWithLayer:self andWorld:world];
     }
+    if ([gameObject getGameObjectID] == GOOD_BLOCK_ID) {
+        goodCount++;
+    } else if ([gameObject getGameObjectID] == BAD_BLOCK_ID) {
+        badCount++;
+    }
     return gameObject;
+}
+
+- (void) removeGameObject:(BaseGameObject*)gameObject
+{
+    if ([gameObject getGameObjectID] == GOOD_BLOCK_ID) {
+        goodCount--;
+    } else if ([gameObject getGameObjectID] == BAD_BLOCK_ID) {
+        badCount--;
+    }
+    
+    [self removeChild:[gameObject getSprite] cleanup:YES];
+    world->DestroyBody([gameObject getBody]);
+    [gameObject release];
 }
 
 - (void) setCallback:(id<LevelCallback>) callback
@@ -142,7 +174,70 @@
 
 - (void) setActiveMissle:(int)missle
 {
+    activeMissle = missle;
+}
+
+- (BaseMissle*) createMissle:(CGPoint)position
+{
+    //TODO: Rewrite
+    switch (activeMissle) {
+        case 1:
+            return [[Missle alloc] initWithPosition:position andWithAngle:0];
+            break;
+        case 2:
+            return [[MissleType2 alloc] initWithPosition:position andWithAngle:0];
+            break;
+        case 3:
+            return [[MissleType3 alloc] initWithPosition:position andWithAngle:0];
+            break;
+        default:
+            break;
+    }
+    return [[Missle alloc] initWithPosition:position andWithAngle:0];
+}
+
+- (void)onNewContact:(b2Contact*) contact
+{
+    // Box2d objects that collided
+	b2Fixture* fixtureA = contact->GetFixtureA();
+	b2Fixture* fixtureB = contact->GetFixtureB();
+	// BaseGameObject that collided
+	BaseGameObject* actorA = (BaseGameObject*) fixtureA->GetBody()->GetUserData();
+	BaseGameObject* actorB = (BaseGameObject*)  fixtureB->GetBody()->GetUserData();
     
+	// This is only true if for example a sprite touched something in your box2d simulation that was not a sprite such as the ground
+	// You may not want to return here, so keep that in mind
+	if(actorA == nil || actorB == nil) return;
+    
+    int id1 = [actorA getGameObjectID];
+    int id2 = [actorB getGameObjectID];
+    NSLog(@"id1 = %d, id2 = %d",id1,id2);
+    [actorA actionByContactWithObject:id2 layer:self andWorld:world];
+    [actorB actionByContactWithObject:id1 layer:self andWorld:world];
+    [delegate gameObjectsContactID1:id1 andID2:id2];
+	// Information about the collision, such as where it hit exactly on each body 
+	//b2WorldManifold* worldManifold = new b2WorldManifold();
+	//contact->GetWorldManifold(worldManifold);
+}
+
+- (int) getGoodBlockCount 
+{
+    return goodCount;
+}
+
+- (int) getBadBlockCount
+{
+    return badCount;
+}
+
+- (void) fail
+{
+    //fail
+}
+
+- (void) win:(BOOL)isExcelent
+{
+    //win
 }
 
 @end

@@ -16,7 +16,6 @@
     if (self) {
         // Initialization code here.
         [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:(id<CCTargetedTouchDelegate>)self priority:0 swallowsTouches:NO];
-        
         cannon = [CCSprite spriteWithFile: @"cannon.png"];
         [cannon setVisible:NO];
         [self addChild:cannon];

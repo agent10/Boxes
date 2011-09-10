@@ -1,21 +1,21 @@
 //
-//  Missle.m
+//  MissleType2.m
 //  BoxesProject
 //
-//  Created by Kirill Olenyov on 9/7/11.
+//  Created by Kirill Olenyov on 9/9/11.
 //  Copyright 2011 House. All rights reserved.
 //
 
-#import "Missle.h"
+#import "MissleType2.h"
 
-@implementation Missle
+@implementation MissleType2
 
 - (id)init
 {
     self = [super init];
     if (self) {
         // Initialization code here.
-        forceAddValue = 1.0f;
+        forceAddValue = 2.0f;
     }
     
     return self;
@@ -26,7 +26,7 @@
     self = [super initWithPosition:p andWithAngle:a];
     if (self) {
         // Initialization code here.
-        imagepath = @"mis1.png";
+        imagepath = @"mis2.png";
     }
     
     return self;

@@ -9,5 +9,9 @@
 #import "DynamicGameObject.h"
 
 @interface BaseMissle : DynamicGameObject
+{
+    float forceAddValue;
+}
 
+- (float) getForceValue;
 @end

@@ -15,6 +15,7 @@
     self = [super init];
     if (self) {
         // Initialization code here.
+        gameObjectID = MISSLE_ID;
     }
     
     return self;
@@ -36,6 +37,11 @@
 	fixtureDef.friction = 0.2f;
     fixtureDef.restitution = 0.4f;
 	body->CreateFixture(&fixtureDef);
+}
+
+- (float) getForceValue
+{
+    return forceAddValue;
 }
 
 @end

@@ -17,6 +17,8 @@
     CCSprite* mis2;
     CCSprite* mis3;
     
+    CCSprite* selectedMissle;
+    
 @private
     id<ForegroundCallback> delegate;
     int scorePosition;
@@ -24,4 +26,6 @@
 
 - (void) setScore:(int) score;
 - (void) setCallback:(id<ForegroundCallback>) callback;
+- (void) fail;
+- (void) win:(BOOL)isExcelent;
 @end

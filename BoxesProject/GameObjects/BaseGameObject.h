@@ -12,6 +12,11 @@
 
 #define PTM_RATIO 32
 
+#define MISSLE_ID 1
+#define BLOCK_ID 100
+#define GOOD_BLOCK_ID 101
+#define BAD_BLOCK_ID 102
+
 @interface BaseGameObject : NSObject
 {
     @protected
@@ -20,6 +25,8 @@
     NSString* imagepath;
     CCSprite* sprite;
     b2Body* body;
+    int gameObjectID;
+    BOOL shouldBeDeleted;
 }
 
 - (id)initWithPosition:(CGPoint) p andWithAngle:(float) a;
@@ -27,8 +34,11 @@
 - (void) makeObjectWithLayer:(CCLayer*) layer andWorld:(b2World*) world; 
 - (void) makeGraphicComponent:(CCLayer*) layer;
 - (void) makePhysicComponent:(b2World*) world;
+- (void) actionByContactWithObject:(int)objectID layer:(CCLayer*) layer andWorld:(b2World*) world;
 - (CCSprite*) getSprite;
 - (b2Body*) getBody;
 - (NSString*) getImagePath;
 - (void) updatePosition;
+- (int) getGameObjectID;
+- (BOOL) shouldBeDeleted;
 @end
