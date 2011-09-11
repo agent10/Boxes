@@ -16,6 +16,7 @@
     if (self) {
         // Initialization code here.
         gameObjectID = 0;
+        objectScore = 0;
     }
     
     return self;
@@ -89,6 +90,11 @@
             sprite.rotation = -1 * CC_RADIANS_TO_DEGREES(body->GetAngle());
         }
     }
+}
+
+- (int) objectScore
+{
+    return objectScore;
 }
 
 - (int) getGameObjectID

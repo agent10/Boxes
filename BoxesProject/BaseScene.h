@@ -35,6 +35,9 @@
 - (void)gameObjectFell:(int)gameObjectID;
 - (void)gameObjectsContactID1:(int)id1 andID2:(int)id2;
 - (void)newMissleSelected: (int)tag;
+- (void) replayMenuSelected;
+- (void) nextLevelMenuSelected;
+- (void) quitToMenuSelected;
 
 - (void) setCallback:(id<BaseSceneCallback>) callback;
 @end

@@ -25,6 +25,7 @@
     self = [super initWithPosition:p andWithAngle:a];
     if (self) {
         // Initialization code here.
+        imagepath = @"obstacle1.png";
     }
     
     return self;

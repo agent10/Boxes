@@ -25,9 +25,14 @@
     self = [super init];
     if (self) {
 
+        CGSize winSize = [[CCDirector sharedDirector] winSize];
         NSString* convert = [NSString stringWithFormat:@"%d", score];
-        CCLabelTTF* scoreLabel = [CCLabelTTF labelWithString:convert fontName:@"Marker Felt" fontSize:20];
+        CCLabelTTF* scoreLabel = [CCLabelTTF labelWithString:convert fontName:@"Marker Felt" fontSize:30];
+        CGSize box = [convert sizeWithFont: [UIFont fontWithName:@"Marker Felt" size:30]];
         scoreLabel.position = position;
+        if (scoreLabel.position.x + box.width/2 > winSize.width) {
+            scoreLabel.position = ccp(winSize.width - box.width/2, scoreLabel.position.y);
+        }
         [self addChild: scoreLabel];
         
         id actionTo = [CCMoveTo actionWithDuration: 0.4 position:ccp(scoreLabel.position.x, scoreLabel.position.y + 45)];

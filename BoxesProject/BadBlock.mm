@@ -16,6 +16,7 @@
     if (self) {
         // Initialization code here.
         gameObjectID = BAD_BLOCK_ID;
+        objectScore = 115;
     }
     
     return self;

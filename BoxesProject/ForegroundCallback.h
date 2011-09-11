@@ -11,4 +11,7 @@
 @protocol ForegroundCallback <NSObject>
 @optional
 - (void)newMissleSelected: (int)tag;
+- (void) replayMenuSelected;
+- (void) nextLevelMenuSelected;
+- (void) quitToMenuSelected;
 @end

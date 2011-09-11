@@ -62,6 +62,7 @@ int scoretemp; //TODO: should removed, scoremanager is not implemented yet
     if(gameObjectID == GOOD_BLOCK_ID) {
         [level fail];
         [foreground fail];
+        [delegate fail];
     }
     
     int currentGoodBlocks = [level getGoodBlockCount];
@@ -71,9 +72,9 @@ int scoretemp; //TODO: should removed, scoremanager is not implemented yet
         if (currentGoodBlocks == totalGoodBlocks) {
             exelent = YES;
         }
-        [delegate win:exelent];
         [level win:exelent];
         [foreground win:exelent];
+        [delegate win:exelent];
     }
 }
 
@@ -85,6 +86,21 @@ int scoretemp; //TODO: should removed, scoremanager is not implemented yet
 - (void)newMissleSelected: (int)tag
 {
     [level setActiveMissle:tag];
+}
+
+- (void) replayMenuSelected
+{
+    [delegate replayLevel];
+}
+
+- (void) nextLevelMenuSelected
+{
+    [delegate startNextLevel];
+}
+
+- (void) quitToMenuSelected
+{
+    [delegate quitToMenu];
 }
 
 - (void) setCallback:(id<BaseSceneCallback>) callback

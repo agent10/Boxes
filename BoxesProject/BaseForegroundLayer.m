@@ -49,10 +49,20 @@
         [self addChild:selectedMissle];
         
         self.isTouchEnabled = YES;
-        [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:NO];
     }
     
     return self;
+}
+
+- (void)dealloc
+{
+    [[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
+    [super dealloc];
+}
+
+- (void) registerWithTouchDispatcher
+{
+    [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:NO];
 }
 
 - (void) setScore:(int) score
@@ -71,11 +81,15 @@
 - (void) fail
 {
     //fail
+    //show fail menu
+    [delegate replayMenuSelected];
 }
 
 - (void) win:(BOOL)isExcelent
 {
     //win
+    //show win menu
+    [delegate nextLevelMenuSelected];
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {

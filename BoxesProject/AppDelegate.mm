@@ -10,8 +10,7 @@
 
 #import "AppDelegate.h"
 #import "GameConfig.h"
-#import "SceneLoader.h"
-#import "BaseSceneCallback.h"
+#import "GameManager.h"
 
 @implementation AppDelegate
 
@@ -109,25 +108,9 @@
 	
 	// Removes the startup flicker
 	[self removeStartupFlicker];
-
-
-    BaseScene* scene = [SceneLoader loadScene:1];
-    [scene setCallback:(id<BaseSceneCallback>)self];
-	[[CCDirector sharedDirector] runWithScene: scene];
-}
-
-- (void)newMissleSelected: (int)tag
-{
     
+    [GameManager game];
 }
-
-- (void) win:(BOOL)excellent
-{
-    /*BaseScene* scene = [SceneLoader loadScene:2];
-    [scene setCallback:(id<BaseSceneCallback>)self];
-	[[CCDirector sharedDirector] replaceScene:scene];*/
-}
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
 	[[CCDirector sharedDirector] pause];

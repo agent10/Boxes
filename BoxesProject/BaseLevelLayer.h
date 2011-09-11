@@ -45,5 +45,6 @@
 - (int) getBadBlockCount;
 - (void) fail;
 - (void) win:(BOOL)isExcelent;
+- (void) stopAllBodies;
 
 @end

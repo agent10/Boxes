@@ -25,6 +25,7 @@
     NSString* imagepath;
     CCSprite* sprite;
     b2Body* body;
+    int objectScore;
     int gameObjectID;
     BOOL shouldBeDeleted;
 }
@@ -39,6 +40,7 @@
 - (b2Body*) getBody;
 - (NSString*) getImagePath;
 - (void) updatePosition;
+- (int) objectScore;
 - (int) getGameObjectID;
 - (BOOL) shouldBeDeleted;
 @end

@@ -50,6 +50,8 @@
         //		flags += b2DebugDraw::e_pairBit;
         //		flags += b2DebugDraw::e_centerOfMassBit;
 		m_debugDraw->SetFlags(flags);
+        
+        [self schedule: @selector(tick:)];
     }
     
     return self;
@@ -57,6 +59,19 @@
 
 - (void) dealloc
 {
+    [self unschedule:@selector(tick:)];
+    
+    for (b2Body* b = world->GetBodyList(); b; b = b->GetNext())
+	{
+		if (b->GetUserData() != NULL) {
+            BaseGameObject* gameobject = (BaseGameObject*)b->GetUserData();
+            if([gameobject shouldBeDeleted]) {
+                [self removeGameObject:gameobject];
+                continue;
+            }
+		}	
+	}
+
 	// in case you have something to dealloc, do it in this method
 	delete world;
 	world = NULL;
@@ -109,11 +124,14 @@
             if(b->GetPosition().y * PTM_RATIO <= -5) { // -5 - delete object, move to the constant
                 int gameObjectID = [gameobject getGameObjectID];
                 CGPoint pos = [gameobject getSprite].position;
-                [self addChild:[ScoreSprite scoreSpriteWithScoreValue:1550 position:pos]];
+                int score = [gameobject objectScore];
+                if(score != 0) {
+                    [self addChild:[ScoreSprite scoreSpriteWithScoreValue:155 position:pos]];
+                    [delegate newScore:155]; //TODO: Remove this callback
+                }
                 
                 [self removeGameObject:gameobject];
                 
-                [delegate newScore:15]; //TODO: Remove this callback
                 [delegate gameObjectFell:gameObjectID];
                 continue;
             }
@@ -128,8 +146,6 @@
     cannon.position = location;
     [cannon setCallback:(id<CannonZoneCallback>) self];
     [self addChild:cannon];
-    
-    [self schedule: @selector(tick:)];
 }
 
 -(void) fire: (CGPoint)location vec: (CGPoint)vec force: (float)force
@@ -211,7 +227,6 @@
     
     int id1 = [actorA getGameObjectID];
     int id2 = [actorB getGameObjectID];
-    NSLog(@"id1 = %d, id2 = %d",id1,id2);
     [actorA actionByContactWithObject:id2 layer:self andWorld:world];
     [actorB actionByContactWithObject:id1 layer:self andWorld:world];
     [delegate gameObjectsContactID1:id1 andID2:id2];
@@ -232,12 +247,20 @@
 
 - (void) fail
 {
-    //fail
+    [self stopAllBodies];
 }
 
 - (void) win:(BOOL)isExcelent
 {
-    //win
+    [self stopAllBodies];
+}
+
+- (void) stopAllBodies
+{
+    for (b2Body* b = world->GetBodyList(); b; b = b->GetNext())
+	{
+        b->SetAwake(NO);
+    }
 }
 
 @end

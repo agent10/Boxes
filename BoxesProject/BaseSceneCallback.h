@@ -10,5 +10,9 @@
 
 @protocol BaseSceneCallback <NSObject>
 @optional
+- (void) fail;
 - (void) win:(BOOL)isExcellent;
+- (void) replayLevel;
+- (void) startNextLevel;
+- (void) quitToMenu;
 @end

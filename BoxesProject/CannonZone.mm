@@ -15,7 +15,6 @@
     self = [super init];
     if (self) {
         // Initialization code here.
-        [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:(id<CCTargetedTouchDelegate>)self priority:0 swallowsTouches:NO];
         cannon = [CCSprite spriteWithFile: @"cannon.png"];
         [cannon setVisible:NO];
         [self addChild:cannon];
@@ -26,10 +25,21 @@
 
 - (void) dealloc
 {
-    //[cannon release];
-    
 	// don't forget to call "super dealloc"
 	[super dealloc];
+}
+
+- (void) onEnter
+{
+    [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:(id<CCTargetedTouchDelegate>)self priority:0 swallowsTouches:NO];
+
+    [super onEnter];
+}
+
+- (void) onExit
+{
+    [[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
+    [super onExit];
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event

@@ -23,6 +23,8 @@
 		ED01D91F14193FCE0000285B /* BaseScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D91E14193FCB0000285B /* BaseScene.mm */; };
 		ED01D9231419659F0000285B /* MissleType2.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D9221419659E0000285B /* MissleType2.mm */; };
 		ED01D926141965DD0000285B /* MissleType3.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED01D925141965DC0000285B /* MissleType3.mm */; };
+		ED1566FA141D0B0A00B9EE94 /* GameManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED1566F9141D0B0A00B9EE94 /* GameManager.mm */; };
+		ED1566FC141D1A1700B9EE94 /* obstacle1.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1566FB141D1A1700B9EE94 /* obstacle1.png */; };
 		ED4151851411917F00749839 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4151841411917F00749839 /* QuartzCore.framework */; };
 		ED4151871411917F00749839 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4151861411917F00749839 /* OpenGLES.framework */; };
 		ED4151891411917F00749839 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4151881411917F00749839 /* OpenAL.framework */; };
@@ -228,6 +230,9 @@
 		ED01D9221419659E0000285B /* MissleType2.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MissleType2.mm; sourceTree = "<group>"; };
 		ED01D924141965DB0000285B /* MissleType3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissleType3.h; sourceTree = "<group>"; };
 		ED01D925141965DC0000285B /* MissleType3.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MissleType3.mm; sourceTree = "<group>"; };
+		ED1566F8141D0B0A00B9EE94 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameManager.h; path = Game/GameManager.h; sourceTree = "<group>"; };
+		ED1566F9141D0B0A00B9EE94 /* GameManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = GameManager.mm; path = Game/GameManager.mm; sourceTree = "<group>"; };
+		ED1566FB141D1A1700B9EE94 /* obstacle1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obstacle1.png; sourceTree = "<group>"; };
 		ED4151801411917F00749839 /* BoxesProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxesProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4151841411917F00749839 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ED4151861411917F00749839 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -695,10 +700,10 @@
 				ED918C4B1413A4B5008FC17A /* BaseBackgroungLayer.m */,
 				ED01D90B141925AC0000285B /* BaseForegroundLayer.h */,
 				ED01D90C141925AD0000285B /* BaseForegroundLayer.m */,
+				ED01D91914193B110000285B /* ForegroundCallback.h */,
 				ED89BF18141B636B00732B11 /* ContactReceiver.h */,
 				ED89BF1A141B637A00732B11 /* ContactReceiver.mm */,
 				ED89BF1F141B764900732B11 /* ContactReceiverCallback.h */,
-				ED01D91914193B110000285B /* ForegroundCallback.h */,
 				ED01D91D14193FCA0000285B /* BaseScene.h */,
 				ED01D91E14193FCB0000285B /* BaseScene.mm */,
 				ED89BF35141BE86E00732B11 /* BaseSceneCallback.h */,
@@ -720,6 +725,7 @@
 		ED4151951411918000749839 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ED1566FB141D1A1700B9EE94 /* obstacle1.png */,
 				ED89BF23141B8BEC00732B11 /* bomb.png */,
 				ED01D91214192C5A0000285B /* Missles */,
 				ED918C6A14142CCE008FC17A /* beam.png */,
@@ -1198,6 +1204,8 @@
 			children = (
 				ED89BF32141BDC3C00732B11 /* SceneLoader.h */,
 				ED89BF33141BDC3C00732B11 /* SceneLoader.mm */,
+				ED1566F8141D0B0A00B9EE94 /* GameManager.h */,
+				ED1566F9141D0B0A00B9EE94 /* GameManager.mm */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -1289,6 +1297,7 @@
 				ED01D91814192D400000285B /* mis3.png in Resources */,
 				ED89BF24141B8BEC00732B11 /* bomb.png in Resources */,
 				ED89BF2A141BBFF000732B11 /* blue2.png in Resources */,
+				ED1566FC141D1A1700B9EE94 /* obstacle1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1453,6 +1462,7 @@
 				ED89BF28141B9F9600732B11 /* ScoreSprite.m in Sources */,
 				ED89BF2D141BC03900732B11 /* BadBlock.mm in Sources */,
 				ED89BF34141BDC3C00732B11 /* SceneLoader.mm in Sources */,
+				ED1566FA141D0B0A00B9EE94 /* GameManager.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
